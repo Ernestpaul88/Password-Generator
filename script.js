@@ -161,7 +161,22 @@ else if (specialChars && numbers && upperCase) {
   chars = character.concat(alpha, alpha2);
 } else if (numbers && lowerCase && upperCase) {
   chars = number.concat(alpha, alpha2);
-}  // User selects only one option
+}  
+// User selects two options
+else if (specialChars && numbers) {
+  chars = character.concat(number);
+} else if (specialChars && lowerCase) {
+  chars = character.concat(alpha);
+} else if (specialChars && upperCase) {
+  chars = character.concat(alpha2);
+} else if (lowerCase && numbers) {
+  chars = alpha.concat(number);
+} else if (lowerCase && upperCase) {
+  chars = alpha.concat(alpha2);
+} else if (numbers && upperCase) {
+  chars = number.concat(alpha2);
+}
+// User selects only one option
 else if (specialChars) {
   chars = character;
 } else if (numbers) {
