@@ -84,9 +84,22 @@ function writePassword() {
 
 }
 
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+
 //Generate Password Function 
 function generatePassword(pwLength,charArray){
+  var pass = "";
 
+  for (i = 1; i <= pwLength; i++) {
+    var random = Math.floor(Math.random() * charArray.length);
+    // console.log(random, charArray[random]);
+    pass += charArray[random];
+  }
+
+  // console.log(charArray);
+  return pass;
 }
 
 // Get Length of Password
@@ -95,7 +108,7 @@ function getlength(){
 
 //Asks for user input and convert input value from string to integer
 length = parseInt(
-  prompt("Please enter your name", "Harry Potter") 
+  prompt("How many characters would you like your password to be? Password length should be between 8 to 128 characters.") 
  );
 
 //Validate user input
@@ -128,10 +141,38 @@ function getCharacterTypes(){
 
 
 // No options selected
-if(!numbers && )
+if(!numbers && !specialChars && !upperCase && !lowerCase){
+  alert("You must choose a criteria!");
+  chars = getCharacterTypes();
+// User selects all options
+} else if (
+  specialChars &&
+  numbers &&
+  upperCase &&
+  lowerCase
+) {
+  chars = character.concat(number, alpha, alpha2);
+}   // user selects three options
+else if (specialChars && numbers && upperCase) {
+  chars = character.concat(number, alpha2);
+} else if (specialChars && numbers && lowerCase) {
+  chars = character.concat(number, alpha);
+} else if (specialChars && lowerCase && upperCase) {
+  chars = character.concat(alpha, alpha2);
+} else if (numbers && lowerCase && upperCase) {
+  chars = number.concat(alpha, alpha2);
+}  // User selects only one option
+else if (specialChars) {
+  chars = character;
+} else if (numbers) {
+  chars = number;
+} else if (lowerCase) {
+  chars = alpha;
+} else if (upperCase) {
+  chars = alpha2;
+}
   
   return chars;
 }
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+
