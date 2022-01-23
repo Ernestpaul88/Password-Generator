@@ -36,17 +36,4 @@ The following image demonstrates the application functionality:
 
 ![An app window with the label Password Generator, an input field labeled Your Secure Password, and a Generate Password button.](./Assets/03-javascript-homework-demo.png)
 
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
-- - -
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
-
-![https://ernestpaul88.github.io/Password-Generator/](Password Generator)
-
-Webpage: https://ernestpaul88.github.io/Password-Generator/
+Deployed Application: https://ernestpaul88.github.io/Password-Generator/
